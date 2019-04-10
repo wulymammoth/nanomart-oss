@@ -4,5 +4,5 @@ gem 'highline'
 
 group :test do
   gem 'rake'
-  gem 'rspec'
+  gem 'rspec', "2.99.0"
 end
