@@ -53,7 +53,7 @@ describe "making sure the customer is old enough" do
   context "when you're an old fogey on Thursday" do
     before(:each) do
       @nanomart = Nanomart.new('/dev/null', Age99.new)
-      Time.stub!(:now).and_return(Time.local(2010, 8, 12, 12))  # Thursday Aug 12 2010 12:00
+      Time.stub(:now).and_return(Time.local(2010, 8, 12, 12))  # Thursday Aug 12 2010 12:00
     end
 
     it "lets you buy everything" do
@@ -68,7 +68,7 @@ describe "making sure the customer is old enough" do
   context "when you're an old fogey on Sunday" do
     before(:each) do
       @nanomart = Nanomart.new('/dev/null', Age99.new)
-      Time.stub!(:now).and_return(Time.local(2010, 8, 15, 12))  # Sunday Aug 15 2010 12:00
+      Time.stub(:now).and_return(Time.local(2010, 8, 15, 12))  # Sunday Aug 15 2010 12:00
     end
 
     it "stops you from buying hard alcohol" do
