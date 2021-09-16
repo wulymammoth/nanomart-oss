@@ -9,6 +9,11 @@ class Nanomart
     @logfile, @prompter = logfile, prompter
   end
 
+  def in_stock?(anything)
+    req = HighlinePrompter.new.get_help
+    try_request(req)
+  end
+
   def sell_me(itm_type)
     itm = case itm_type
           when :beer
@@ -30,9 +35,20 @@ class Nanomart
     end
     itm.log_sale
   end
+
+  private
+
+  def try_request(request)
+    # TODO
+    exec(request)
+  end
 end
 
 class HighlinePrompter
+  def get_help
+    HighLine.new.ask 'How can we help you today?'
+  end
+
   def get_age
     HighLine.new.ask('Age? ', Integer) # prompts for user's age, reads it in
   end
