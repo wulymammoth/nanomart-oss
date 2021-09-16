@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 gem 'highline'
+gem 'pry'
 
 group :test do
   gem 'rake'

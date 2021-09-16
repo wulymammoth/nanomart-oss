@@ -77,3 +77,10 @@ describe "making sure the customer is old enough" do
   end
 end
 
+describe "#in_stock?" do
+  before { @nanomart = Nanomart.new('/dev/null', Age9.new) }
+
+  it 'needs to be revisited' do
+    # TODO: should probably raise `NotImplementedError`
+  end
+end
